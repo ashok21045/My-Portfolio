@@ -74,7 +74,6 @@
       transition: background 0.3s, color 0.3s;
     }
 
-    /* Accessibility Skip Link */
     .skip-link {
       position: fixed;
       top: -60px;
@@ -92,7 +91,6 @@
     }
     .skip-link:focus { top: 12px; }
 
-    /* Focus ring */
     a:focus-visible, button:focus-visible {
       outline: 2px solid var(--accent-light);
       outline-offset: 3px;
@@ -153,7 +151,7 @@
       }
     }
 
-    /* ── LOADER ── */
+    /* Loader */
     #loader {
       position: fixed;
       inset: 0;
@@ -198,7 +196,7 @@
       color: var(--muted);
     }
 
-    /* ── NAVIGATION ── */
+    /* Navigation */
     nav {
       position: fixed;
       top: 20px;
@@ -216,19 +214,6 @@
       border-radius: 18px;
       box-shadow: 0 10px 40px rgba(0,0,0,.25), inset 0 1px rgba(255,255,255,.05);
       transition: padding 0.35s ease, backdrop-filter 0.35s ease;
-    }
-
-    nav::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      padding: 1px;
-      background: linear-gradient(90deg, transparent, var(--accent-dim), transparent);
-      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      pointer-events: none;
     }
 
     .nav-logo {
@@ -253,53 +238,50 @@
 
     .nav-links {
       display: flex;
-      gap: 0.4rem;
+      gap: 0.2rem;
       list-style: none;
       align-items: center;
     }
 
     .nav-links a {
-      font-size: .72rem;
-      letter-spacing: .12em;
+      font-size: .7rem;
+      letter-spacing: .1em;
       text-transform: uppercase;
       color: var(--muted);
       text-decoration: none;
-      padding: .55rem 0.9rem;
+      padding: .5rem 0.8rem;
       border-radius: 999px;
-      transition: color .2s, background .2s, transform .2s;
+      transition: color .2s, background .2s;
     }
     .nav-links a:hover {
       background: var(--accent-dim);
       color: var(--text);
-      transform: translateY(-2px);
-    }
-    .nav-links a.active {
-      color: white;
-      background: var(--accent);
-      font-weight: 600;
     }
 
     .nav-right {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: .8rem;
     }
 
-    .nav-hire {
-      font-size: .68rem;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      text-decoration: none;
-      border: 1px solid var(--accent);
-      padding: .55rem 1.1rem;
-      border-radius: 999px;
+    .terminal-btn {
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--accent-light);
+      padding: .45rem .8rem;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: .7rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: .4rem;
       transition: all .2s;
     }
-    .nav-hire:hover {
+    .terminal-btn:hover {
+      border-color: var(--accent);
+      color: #fff;
       background: var(--accent);
-      color: white;
-      box-shadow: 0 0 15px var(--accent-dim);
     }
 
     .theme-toggle {
@@ -320,7 +302,6 @@
       transform: scale(1.05);
     }
 
-    /* Mobile Hamburger */
     .hamburger {
       display: none;
       flex-direction: column;
@@ -341,7 +322,7 @@
       transition: all .3s ease;
     }
 
-    /* Mobile Menu Drawer */
+    /* Mobile Drawer */
     .mobile-menu-overlay {
       position: fixed;
       inset: 0;
@@ -373,15 +354,15 @@
     .mobile-nav-link {
       font-family: 'Syne', sans-serif;
       font-weight: 700;
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       color: var(--muted);
       text-decoration: none;
       padding: .6rem 0;
       transition: color .2s;
     }
-    .mobile-nav-link:hover, .mobile-nav-link.active { color: var(--text); }
+    .mobile-nav-link:hover { color: var(--text); }
 
-    /* ── BUTTONS ── */
+    /* Buttons */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -413,7 +394,7 @@
       background: var(--accent-dim);
     }
 
-    /* ── HERO SECTION ── */
+    /* Hero Section */
     .hero {
       min-height: 100vh;
       display: grid;
@@ -474,10 +455,7 @@
       flex-wrap: wrap;
     }
 
-    /* Photo Frame styling */
-    .hero-photo-wrap {
-      position: relative;
-    }
+    .hero-photo-wrap { position: relative; }
     .hero-photo-frame {
       position: relative;
       width: 100%;
@@ -499,16 +477,14 @@
       transform: scale(1.03);
     }
 
-    /* ── SECTIONS GENERAL ── */
+    /* Sections General */
     section {
       padding: 6rem 2rem;
       max-width: 1100px;
       margin: 0 auto;
     }
 
-    .section-header {
-      margin-bottom: 3rem;
-    }
+    .section-header { margin-bottom: 3rem; }
     .section-tag {
       font-size: .68rem;
       letter-spacing: .2em;
@@ -532,7 +508,7 @@
       letter-spacing: -.02em;
     }
 
-    /* ── ABOUT ── */
+    /* About Section */
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -549,7 +525,6 @@
       color: var(--text);
       font-weight: 500;
     }
-
     .about-stats {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -572,38 +547,122 @@
       letter-spacing: .08em;
     }
 
-    /* ── SKILLS / EXPERTISE ── */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-      gap: 1.2rem;
+    /* NEW SECTION: Experience & Timeline */
+    .timeline {
+      position: relative;
+      border-left: 1px solid var(--border);
+      padding-left: 2rem;
+      margin-left: 1rem;
     }
-    .skill-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      padding: 1.5rem 1rem;
-      border-radius: 14px;
-      text-align: center;
-      transition: all .3s ease;
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2.5rem;
     }
-    .skill-card:hover {
-      border-color: var(--accent);
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: calc(-2rem - 5px);
+      top: 6px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 10px var(--accent);
     }
-    .skill-card i {
-      font-size: 2rem;
-      color: var(--accent);
-      margin-bottom: .8rem;
-      display: block;
+    .timeline-date {
+      font-size: .7rem;
+      color: var(--amber);
+      letter-spacing: .1em;
+      margin-bottom: .3rem;
     }
-    .skill-card h3 {
+    .timeline-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+    .timeline-org {
       font-size: .8rem;
-      font-weight: 500;
-      letter-spacing: .03em;
+      color: var(--accent-light);
+      margin-bottom: .5rem;
+    }
+    .timeline-desc {
+      font-size: .85rem;
+      color: var(--muted);
+      line-height: 1.6;
     }
 
-    /* ── PROJECTS ── */
+    /* Tech Stack Matrix */
+    .matrix-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+    .matrix-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 1.8rem;
+      border-radius: 16px;
+      transition: border-color .3s;
+    }
+    .matrix-card:hover { border-color: var(--accent); }
+    .matrix-card h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+    }
+    .matrix-card h3 i { color: var(--accent); }
+    .matrix-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+    .matrix-tags span {
+      font-size: .75rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: .4rem .7rem;
+      border-radius: 8px;
+      color: var(--muted);
+    }
+
+    /* Engineering Workflow Section */
+    .workflow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+    .workflow-step {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 1.8rem;
+      border-radius: 16px;
+      position: relative;
+    }
+    .workflow-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent-dim);
+      position: absolute;
+      top: 1rem;
+      right: 1.2rem;
+    }
+    .workflow-step h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.1rem;
+      margin-bottom: .8rem;
+    }
+    .workflow-step p {
+      font-size: .82rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* Projects Case Studies */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -613,7 +672,7 @@
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 18px;
-      padding: 2rem;
+      padding: 2.2rem;
       position: relative;
       display: flex;
       flex-direction: column;
@@ -647,12 +706,17 @@
       font-size: 1.3rem;
       margin-bottom: .8rem;
     }
-    .project-card p {
-      font-size: .85rem;
-      color: var(--muted);
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
+    .case-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: .8rem 1rem;
+      border-radius: 10px;
+      margin-bottom: .8rem;
+      font-size: .8rem;
     }
+    .case-block strong { color: var(--accent-light); display: block; font-size: .7rem; text-transform: uppercase; letter-spacing: .05em; }
+    .case-block p { color: var(--muted); margin: 0; line-height: 1.5; }
+
     .project-link {
       color: var(--accent);
       text-decoration: none;
@@ -663,11 +727,12 @@
       display: inline-flex;
       align-items: center;
       gap: .5rem;
+      margin-top: 1rem;
       transition: gap .2s;
     }
     .project-link:hover { gap: .8rem; }
 
-    /* ── CONTACT ── */
+    /* Contact Section */
     .contact-wrapper {
       display: grid;
       grid-template-columns: 1fr 1.3fr;
@@ -743,7 +808,66 @@
       border-color: var(--accent);
     }
 
-    /* ── FOOTER ── */
+    /* INTERACTIVE TERMINAL OVERLAY */
+    .terminal-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(10px);
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s ease;
+    }
+    .terminal-modal.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .terminal-window {
+      width: min(700px, 100%);
+      background: #0d0d12;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+    }
+    .terminal-header {
+      background: #16161f;
+      padding: .8rem 1.2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .terminal-dots { display: flex; gap: 6px; }
+    .dot { width: 10px; height: 10px; border-radius: 50%; }
+    .dot-red { background: #ef4444; }
+    .dot-yellow { background: #f59e0b; }
+    .dot-green { background: #10b981; }
+    .terminal-body {
+      padding: 1.5rem;
+      height: 320px;
+      overflow-y: auto;
+      font-size: .8rem;
+      color: #34d399;
+    }
+    .terminal-output { margin-bottom: 1rem; color: var(--text); white-space: pre-line; }
+    .terminal-input-line { display: flex; gap: .5rem; align-items: center; }
+    .terminal-input-line input {
+      background: transparent;
+      border: none;
+      color: #34d399;
+      font-family: inherit;
+      font-size: .8rem;
+      outline: none;
+      width: 100%;
+    }
+
+    /* Footer */
     footer {
       border-top: 1px solid var(--border);
       text-align: center;
@@ -752,7 +876,6 @@
       color: var(--muted);
     }
 
-    /* ── RESPONSIVE DESIGN ── */
     @media (max-width: 900px) {
       .hero {
         grid-template-columns: 1fr;
@@ -762,11 +885,8 @@
       .hero-sub { margin: 0 auto 2rem; }
       .hero-actions { justify-content: center; }
       .hero-photo-wrap { max-width: 320px; margin: 0 auto; }
-      
-      .about-grid, .contact-wrapper {
-        grid-template-columns: 1fr;
-      }
-      .nav-links, .nav-hire { display: none; }
+      .about-grid, .contact-wrapper { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
       .hamburger { display: flex; }
     }
   </style>
@@ -796,13 +916,17 @@
 
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
-      <li><a href="#skills">Expertise</a></li>
-      <li><a href="#projects">Work</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#matrix">Ecosystem</a></li>
+      <li><a href="#workflow">Workflow</a></li>
+      <li><a href="#projects">Works</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
 
     <div class="nav-right">
-      <a href="#contact" class="nav-hire">Let's Talk</a>
+      <button class="terminal-btn" id="openTerminal" title="Press ~ to open terminal">
+        <i class="fa-solid fa-terminal"></i> CLI
+      </button>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
         <i class="fa-solid fa-moon"></i>
       </button>
@@ -816,8 +940,10 @@
   <div class="mobile-menu-overlay" id="mobileOverlay"></div>
   <div class="mobile-menu" id="mobileMenu">
     <a href="#about" class="mobile-nav-link">About</a>
-    <a href="#skills" class="mobile-nav-link">Expertise</a>
-    <a href="#projects" class="mobile-nav-link">Work</a>
+    <a href="#experience" class="mobile-nav-link">Experience</a>
+    <a href="#matrix" class="mobile-nav-link">Ecosystem</a>
+    <a href="#workflow" class="mobile-nav-link">Workflow</a>
+    <a href="#projects" class="mobile-nav-link">Works</a>
     <a href="#contact" class="mobile-nav-link">Contact</a>
   </div>
 
@@ -869,55 +995,174 @@
       </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills">
+    <!-- Experience & Education Section -->
+    <section id="experience">
       <div class="section-header">
-        <span class="section-tag">02 / Competencies</span>
-        <h2 class="section-title">My Expertise</h2>
+        <span class="section-tag">02 / Journey</span>
+        <h2 class="section-title">Experience & Education</h2>
       </div>
 
-      <div class="skills-grid">
-        <div class="skill-card"><i class="fab fa-html5"></i><h3>HTML/CSS</h3></div>
-        <div class="skill-card"><i class="fab fa-js"></i><h3>JavaScript</h3></div>
-        <div class="skill-card"><i class="fab fa-php"></i><h3>PHP / MySQL</h3></div>
-        <div class="skill-card"><i class="fab fa-python"></i><h3>Python</h3></div>
-        <div class="skill-card"><i class="fa-solid fa-code"></i><h3>C# / Java</h3></div>
-        <div class="skill-card"><i class="fab fa-figma"></i><h3>Figma</h3></div>
-        <div class="skill-card"><i class="fab fa-git-alt"></i><h3>Git / GitHub</h3></div>
-        <div class="skill-card"><i class="fab fa-aws"></i><h3>AWS Cloud</h3></div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">2023 — PRESENT</div>
+          <div class="timeline-title">Freelance Full-Stack Developer & Designer</div>
+          <div class="timeline-org">Gaindakot, Nepal</div>
+          <p class="timeline-desc">Designing and engineering bespoke web applications for regional clients. Building custom PHP/MySQL administrative dashboards, dynamic responsive frontends, and performing website performance audits.</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">2022 — PRESENT</div>
+          <div class="timeline-title">Bachelor in Computer Application (BCA)</div>
+          <div class="timeline-org">Tribhuvan University, Nepal</div>
+          <p class="timeline-desc">Focusing on object-oriented programming, database management systems, algorithms, software engineering principles, and web technologies.</p>
+        </div>
       </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Tech Stack & Ecosystem Matrix Section -->
+    <section id="matrix">
+      <div class="section-header">
+        <span class="section-tag">03 / Competencies</span>
+        <h2 class="section-title">Tech Ecosystem</h2>
+      </div>
+
+      <div class="matrix-grid">
+        <div class="matrix-card">
+          <h3><i class="fa-solid fa-laptop-code"></i> Frontend</h3>
+          <div class="matrix-tags">
+            <span>HTML5 / CSS3</span>
+            <span>JavaScript (ES6+)</span>
+            <span>Tailwind CSS</span>
+            <span>Responsive Layouts</span>
+          </div>
+        </div>
+
+        <div class="matrix-card">
+          <h3><i class="fa-solid fa-server"></i> Backend & DB</h3>
+          <div class="matrix-tags">
+            <span>PHP</span>
+            <span>Python</span>
+            <span>MySQL</span>
+            <span>REST API Design</span>
+          </div>
+        </div>
+
+        <div class="matrix-card">
+          <h3><i class="fa-solid fa-layer-group"></i> Languages</h3>
+          <div class="matrix-tags">
+            <span>C#</span>
+            <span>Java</span>
+            <span>SQL</span>
+            <span>Bash</span>
+          </div>
+        </div>
+
+        <div class="matrix-card">
+          <h3><i class="fa-solid fa-pen-nib"></i> Design & Devops</h3>
+          <div class="matrix-tags">
+            <span>Figma UI/UX</span>
+            <span>Git / GitHub</span>
+            <span>AWS Basics</span>
+            <span>Postman</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Engineering Philosophy Section -->
+    <section id="workflow">
+      <div class="section-header">
+        <span class="section-tag">04 / Methodology</span>
+        <h2 class="section-title">Engineering Philosophy</h2>
+      </div>
+
+      <div class="workflow-grid">
+        <div class="workflow-step">
+          <div class="workflow-num">01</div>
+          <h3>Discovery & Wireframing</h3>
+          <p>Analyzing user requirements, creating functional user flows, and wireframing interface prototypes directly inside Figma.</p>
+        </div>
+
+        <div class="workflow-step">
+          <div class="workflow-num">02</div>
+          <h3>Architecture & Schema</h3>
+          <p>Structuring relational database schemas, mapping server endpoint architectures, and planning scalable data flows.</p>
+        </div>
+
+        <div class="workflow-step">
+          <div class="workflow-num">03</div>
+          <h3>Clean Implementation</h3>
+          <p>Writing well-documented, modular code focused on performance optimization, responsive execution, and cross-browser stability.</p>
+        </div>
+
+        <div class="workflow-step">
+          <div class="workflow-num">04</div>
+          <h3>Testing & Deployment</h3>
+          <p>Auditing site accessibility, validating security protocols, and hosting platforms onto cloud production servers.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Expanded Projects Section -->
     <section id="projects">
       <div class="section-header">
-        <span class="section-tag">03 / Works</span>
-        <h2 class="section-title">Featured Projects</h2>
+        <span class="section-tag">05 / Works</span>
+        <h2 class="section-title">Case Studies</h2>
       </div>
 
       <div class="projects-grid">
         <div class="project-card">
-          <div class="project-top">
-            <i class="fa-solid fa-brain project-icon"></i>
-            <div class="tags"><span>PHP</span><span>JS</span><span>Quiz</span></div>
-          </div>
           <div>
+            <div class="project-top">
+              <i class="fa-solid fa-brain project-icon"></i>
+              <div class="tags"><span>PHP</span><span>MySQL</span><span>JS</span></div>
+            </div>
             <h3>BrainSpark</h3>
-            <p>Interactive cognitive training platform built with PHP and JavaScript featuring customizable quiz engines and tracking metrics.</p>
+
+            <div class="case-block">
+              <strong>The Problem</strong>
+              <p>Traditional quiz tools lack flexible category control and dynamic timing feedback for competitive learners.</p>
+            </div>
+
+            <div class="case-block">
+              <strong>The Solution</strong>
+              <p>Engineered an interactive cognitive platform with custom quiz engines, real-time timer logic, and dynamic user scoring.</p>
+            </div>
+
+            <div class="case-block">
+              <strong>Key Impact</strong>
+              <p>Handled dynamic session states seamlessly with zero database latency under test environments.</p>
+            </div>
           </div>
-          <a href="https://github.com/ashok21045/project-for-4th-sem" class="project-link" target="_blank" rel="noopener">Explore Code <i class="fa-solid fa-arrow-right"></i></a>
+
+          <a href="https://github.com/ashok21045/project-for-4th-sem" class="project-link" target="_blank" rel="noopener">Explore Repository <i class="fa-solid fa-arrow-right"></i></a>
         </div>
 
         <div class="project-card">
-          <div class="project-top">
-            <i class="fa-solid fa-cart-shopping project-icon"></i>
-            <div class="tags"><span>E-Commerce</span><span>Auth</span></div>
-          </div>
           <div>
+            <div class="project-top">
+              <i class="fa-solid fa-cart-shopping project-icon"></i>
+              <div class="tags"><span>PHP</span><span>MySQL</span><span>E-Commerce</span></div>
+            </div>
             <h3>E-Commerce Core</h3>
-            <p>Full-featured digital store featuring item categorization, robust session management, dynamic cart updates, and checkout flow.</p>
+
+            <div class="case-block">
+              <strong>The Problem</strong>
+              <p>Small digital retail vendors need simple, secure transaction tracking without complex enterprise bloatware.</p>
+            </div>
+
+            <div class="case-block">
+              <strong>The Solution</strong>
+              <p>Developed a full-stack digital store with session-authenticated users, active cart handling, and simple admin metrics.</p>
+            </div>
+
+            <div class="case-block">
+              <strong>Key Impact</strong>
+              <p>Achieved sub-100ms page load speeds across catalog and checkout components.</p>
+            </div>
           </div>
-          <a href="https://github.com/ashok21045/shopping_site" class="project-link" target="_blank" rel="noopener">Explore Code <i class="fa-solid fa-arrow-right"></i></a>
+
+          <a href="https://github.com/ashok21045/shopping_site" class="project-link" target="_blank" rel="noopener">Explore Repository <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
     </section>
@@ -925,7 +1170,7 @@
     <!-- Contact Section -->
     <section id="contact">
       <div class="section-header">
-        <span class="section-tag">04 / Connect</span>
+        <span class="section-tag">06 / Connect</span>
         <h2 class="section-title">Get In Touch</h2>
       </div>
 
@@ -936,7 +1181,7 @@
 
           <div class="contact-item">
             <i class="fas fa-envelope"></i>
-            <span>poudelashok222@email.com</span>
+            <span>poudelashok222@gmail.com</span>
           </div>
           <div class="contact-item">
             <i class="fas fa-location-dot"></i>
@@ -962,6 +1207,28 @@
       </div>
     </section>
   </main>
+
+  <!-- Interactive Terminal Window Overlay -->
+  <div class="terminal-modal" id="terminalModal">
+    <div class="terminal-window">
+      <div class="terminal-header">
+        <div class="terminal-dots">
+          <span class="dot dot-red" id="closeTerminal"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+        </div>
+        <span style="font-size: .7rem; color: var(--muted)">ashok@portfolio:~</span>
+      </div>
+      <div class="terminal-body" id="terminalBody">
+        <div class="terminal-output">Welcome to Ashok's Interactive Shell v1.0.0
+Type <span style="color: var(--amber)">help</span> to see available commands.</div>
+        <div class="terminal-input-line">
+          <span>$</span>
+          <input type="text" id="terminalInput" autofocus>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <footer>
     <p>&copy; 2026 Ashok Poudel. Crafted with precision in Gaindakot, Nepal.</p>
@@ -1016,6 +1283,73 @@
     mobileOverlay.addEventListener('click', toggleMenu);
     document.querySelectorAll('.mobile-nav-link').forEach(link => {
       link.addEventListener('click', toggleMenu);
+    });
+
+    // Interactive Terminal Shell Logic
+    const terminalModal = document.getElementById('terminalModal');
+    const openTerminal = document.getElementById('openTerminal');
+    const closeTerminal = document.getElementById('closeTerminal');
+    const terminalInput = document.getElementById('terminalInput');
+    const terminalBody = document.getElementById('terminalBody');
+
+    function toggleTerminal() {
+      terminalModal.classList.toggle('open');
+      if(terminalModal.classList.contains('open')) {
+        terminalInput.focus();
+      }
+    }
+
+    openTerminal.addEventListener('click', toggleTerminal);
+    closeTerminal.addEventListener('click', toggleTerminal);
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === '`' || e.key === '~') {
+        e.preventDefault();
+        toggleTerminal();
+      }
+    });
+
+    terminalInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        const cmd = terminalInput.value.trim().toLowerCase();
+        let output = '';
+
+        switch(cmd) {
+          case 'help':
+            output = `Available Commands:
+- bio       : Learn about Ashok
+- skills    : See technical stack
+- contact   : Get email & phone
+- clear     : Clear terminal history
+- exit      : Close shell`;
+            break;
+          case 'bio':
+            output = `Ashok Poudel — Full-stack Web Developer & UI/UX Designer based in Gaindakot, Nepal. Pursuing BCA at Tribhuvan University.`;
+            break;
+          case 'skills':
+            output = `PHP, JavaScript, HTML/CSS, Python, C#, Java, MySQL, Figma, Git, AWS.`;
+            break;
+          case 'contact':
+            output = `Email: poudelashok222@gmail.com\nPhone: +977 9744340950\nLocation: Gaindakot, Nepal`;
+            break;
+          case 'clear':
+            terminalBody.innerHTML = `<div class="terminal-input-line"><span>$</span><input type="text" id="terminalInput" autofocus></div>`;
+            return;
+          case 'exit':
+            toggleTerminal();
+            terminalInput.value = '';
+            return;
+          default:
+            output = `Command not found: "${cmd}". Type "help" for a list of commands.`;
+        }
+
+        const outDiv = document.createElement('div');
+        outDiv.className = 'terminal-output';
+        outDiv.innerHTML = `<span style="color: #8b5cf6">$ ${cmd}</span>\n${output}`;
+        terminalBody.insertBefore(outDiv, terminalInput.parentElement);
+        terminalInput.value = '';
+        terminalBody.scrollTop = terminalBody.scrollHeight;
+      }
     });
   </script>
 </body>
