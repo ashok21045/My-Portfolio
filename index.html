@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,52 +7,56 @@
     <title>Ashok Poudel | Developer & UI/UX Designer</title>
 
     <meta name="description"
-          content="Ashok Poudel — BCA student, developer and UI/UX designer building web applications and exploring backend development and Generative AI.">
+          content="Ashok Poudel — BCA Student, Developer and UI/UX Designer from Nepal. Explore my projects, skills and development journey.">
 
     <meta name="keywords"
-          content="Ashok Poudel, Developer, BCA Student, Python, PHP, JavaScript, Java, UI UX Designer, Nepal">
+          content="Ashok Poudel, BCA Student, Developer, UI UX Designer, Python, Java, PHP, JavaScript, Nepal">
 
     <meta name="author" content="Ashok Poudel">
 
     <meta property="og:title" content="Ashok Poudel | Developer & UI/UX Designer">
     <meta property="og:description"
-          content="BCA student, developer and UI/UX designer from Nepal.">
+          content="BCA Student · Developer · UI/UX Designer">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ashokpoudel.info.np/">
+    <meta property="og:image" content="ashok.jpg">
 
     <meta name="theme-color" content="#0b1020">
 
-    <link rel="icon" href="assets/favicon.png">
+    <!-- Favicon -->
+    <link rel="icon" href="ashok.jpg">
 
-    <!-- Google Font -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
-        rel="stylesheet"
-    >
 
-    <!-- Icons -->
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    >
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <style>
+
+        /* =========================================
+           VARIABLES
+        ========================================= */
+
         :root {
             --bg: #080b14;
-            --bg-secondary: #0d1220;
+            --bg2: #0d1220;
             --card: #111827;
-            --card-hover: #151e31;
+            --card2: #151d2e;
 
-            --text: #f1f5f9;
+            --text: #f8fafc;
             --muted: #94a3b8;
 
             --primary: #8b5cf6;
             --primary-light: #a78bfa;
             --blue: #3b82f6;
 
-            --border: rgba(148, 163, 184, 0.14);
+            --border: rgba(148, 163, 184, 0.15);
 
             --max-width: 1150px;
         }
@@ -75,6 +78,10 @@
             line-height: 1.7;
         }
 
+        body.no-scroll {
+            overflow: hidden;
+        }
+
         a {
             color: inherit;
             text-decoration: none;
@@ -85,24 +92,31 @@
             display: block;
         }
 
+        button,
+        input,
+        textarea {
+            font-family: inherit;
+        }
+
         .container {
             width: min(92%, var(--max-width));
             margin: auto;
         }
 
-        /* =========================
+        /* =========================================
            NAVBAR
-        ========================= */
+        ========================================= */
 
         nav {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
+
             z-index: 1000;
 
             background: rgba(8, 11, 20, 0.82);
-            backdrop-filter: blur(15px);
+            backdrop-filter: blur(16px);
 
             border-bottom: 1px solid var(--border);
         }
@@ -117,9 +131,8 @@
 
         .logo {
             font-family: "JetBrains Mono", monospace;
-            font-size: 20px;
+            font-size: 21px;
             font-weight: 700;
-            color: white;
         }
 
         .logo span {
@@ -143,12 +156,13 @@
             color: white;
         }
 
-        .nav-social {
+        .nav-right {
             display: flex;
-            gap: 12px;
+            align-items: center;
+            gap: 10px;
         }
 
-        .nav-social a {
+        .nav-social {
             width: 36px;
             height: 36px;
 
@@ -156,21 +170,79 @@
             place-items: center;
 
             border: 1px solid var(--border);
-            border-radius: 10px;
+            border-radius: 9px;
 
             color: var(--muted);
+
             transition: 0.25s;
         }
 
-        .nav-social a:hover {
+        .nav-social:hover {
             color: white;
             border-color: var(--primary);
             transform: translateY(-2px);
         }
 
-        /* =========================
+        .menu-btn {
+            display: none;
+
+            width: 40px;
+            height: 40px;
+
+            border: 1px solid var(--border);
+            background: transparent;
+            color: white;
+
+            border-radius: 9px;
+
+            cursor: pointer;
+        }
+
+        /* =========================================
+           MOBILE MENU
+        ========================================= */
+
+        .mobile-menu {
+            position: fixed;
+
+            top: 72px;
+            right: -100%;
+
+            width: min(85%, 320px);
+            height: calc(100vh - 72px);
+
+            background: #0c111d;
+
+            border-left: 1px solid var(--border);
+
+            padding: 30px;
+
+            z-index: 999;
+
+            transition: 0.3s;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu a {
+            display: block;
+
+            padding: 14px 0;
+
+            color: var(--muted);
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .mobile-menu a:hover {
+            color: white;
+        }
+
+        /* =========================================
            HERO
-        ========================= */
+        ========================================= */
 
         .hero {
             min-height: 100vh;
@@ -182,19 +254,24 @@
 
             background:
                 radial-gradient(
-                    circle at 15% 25%,
+                    circle at 15% 30%,
                     rgba(139, 92, 246, 0.12),
                     transparent 30%
                 ),
                 radial-gradient(
-                    circle at 85% 70%,
+                    circle at 85% 65%,
                     rgba(59, 130, 246, 0.08),
                     transparent 30%
                 );
         }
 
-        .hero-content {
-            max-width: 850px;
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+
+            gap: 70px;
+
+            align-items: center;
         }
 
         .hero-tag {
@@ -210,29 +287,33 @@
             background: rgba(139, 92, 246, 0.07);
 
             color: var(--primary-light);
-            font-size: 13px;
+
             font-family: "JetBrains Mono", monospace;
+            font-size: 12px;
 
             margin-bottom: 25px;
         }
 
-        .status-dot {
+        .dot {
             width: 7px;
             height: 7px;
 
             background: #22c55e;
+
             border-radius: 50%;
         }
 
         .hero h1 {
-            font-size: clamp(45px, 7vw, 82px);
+            font-size: clamp(45px, 6vw, 75px);
+
             line-height: 1.05;
+
             letter-spacing: -3px;
 
             margin-bottom: 20px;
         }
 
-        .hero h1 span {
+        .gradient-text {
             background: linear-gradient(
                 90deg,
                 var(--primary-light),
@@ -241,42 +322,51 @@
 
             -webkit-background-clip: text;
             background-clip: text;
+
             color: transparent;
         }
 
         .hero-role {
-            font-size: clamp(20px, 3vw, 30px);
+            font-size: clamp(20px, 3vw, 29px);
+
             font-weight: 600;
+
             color: #cbd5e1;
 
             margin-bottom: 20px;
         }
 
         .hero-description {
-            max-width: 700px;
+            max-width: 650px;
 
             color: var(--muted);
-            font-size: 17px;
 
-            margin-bottom: 32px;
+            font-size: 16px;
+
+            margin-bottom: 30px;
         }
 
         .hero-buttons {
             display: flex;
             flex-wrap: wrap;
-            gap: 12px;
+
+            gap: 11px;
         }
 
         .btn {
             display: inline-flex;
+
             align-items: center;
+            justify-content: center;
+
             gap: 9px;
 
-            padding: 12px 20px;
+            padding: 12px 19px;
 
             border-radius: 9px;
 
             font-size: 14px;
+
             font-weight: 600;
 
             transition: 0.25s;
@@ -294,80 +384,154 @@
 
         .btn-outline {
             border: 1px solid var(--border);
+
             color: #cbd5e1;
         }
 
         .btn-outline:hover {
             border-color: var(--primary);
             color: white;
+
             transform: translateY(-2px);
         }
 
-        /* =========================
-           SECTIONS
-        ========================= */
+        /* =========================================
+           PROFILE IMAGE
+        ========================================= */
+
+        .hero-photo {
+            display: flex;
+            justify-content: center;
+        }
+
+        .photo-wrapper {
+            position: relative;
+
+            width: 330px;
+            height: 330px;
+        }
+
+        .photo-wrapper::before {
+            content: "";
+
+            position: absolute;
+
+            inset: -15px;
+
+            border: 1px solid rgba(139, 92, 246, 0.3);
+
+            border-radius: 50%;
+
+            transform: rotate(10deg);
+        }
+
+        .photo-wrapper::after {
+            content: "";
+
+            position: absolute;
+
+            inset: -28px;
+
+            border: 1px dashed rgba(59, 130, 246, 0.2);
+
+            border-radius: 50%;
+
+            transform: rotate(-12deg);
+        }
+
+        .profile-image {
+            position: relative;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 5px solid #151c2b;
+
+            z-index: 2;
+        }
+
+        /* =========================================
+           SECTION
+        ========================================= */
 
         section {
             padding: 100px 0;
         }
 
         .section-label {
-            color: var(--primary-light);
             font-family: "JetBrains Mono", monospace;
-            font-size: 13px;
 
-            margin-bottom: 10px;
+            font-size: 12px;
+
+            color: var(--primary-light);
+
+            margin-bottom: 9px;
         }
 
         .section-title {
-            font-size: 34px;
+            font-size: 35px;
+
             letter-spacing: -1px;
-            margin-bottom: 14px;
+
+            margin-bottom: 12px;
         }
 
         .section-description {
             color: var(--muted);
-            max-width: 650px;
+
+            max-width: 680px;
+
             margin-bottom: 45px;
         }
 
-        /* =========================
+        /* =========================================
            ABOUT
-        ========================= */
+        ========================================= */
 
         .about-grid {
             display: grid;
+
             grid-template-columns: 1.2fr 0.8fr;
+
             gap: 45px;
-            align-items: start;
         }
 
         .about-text p {
             color: var(--muted);
-            margin-bottom: 18px;
+
+            margin-bottom: 17px;
         }
 
         .about-card {
-            padding: 25px;
+            padding: 27px;
 
             background: var(--card);
+
             border: 1px solid var(--border);
+
             border-radius: 14px;
         }
 
         .about-card h3 {
-            margin-bottom: 18px;
+            margin-bottom: 17px;
         }
 
         .info-row {
             display: flex;
+
             justify-content: space-between;
+
+            gap: 15px;
 
             padding: 11px 0;
 
             border-bottom: 1px solid var(--border);
 
-            font-size: 14px;
+            font-size: 13px;
         }
 
         .info-row:last-child {
@@ -378,127 +542,151 @@
             color: var(--muted);
         }
 
-        /* =========================
+        .info-row span:last-child {
+            text-align: right;
+        }
+
+        /* =========================================
            SKILLS
-        ========================= */
+        ========================================= */
 
         .skills-grid {
             display: grid;
+
             grid-template-columns: repeat(2, 1fr);
+
             gap: 18px;
         }
 
         .skill-card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 14px;
+            padding: 26px;
 
-            padding: 25px;
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 14px;
 
             transition: 0.25s;
         }
 
         .skill-card:hover {
-            background: var(--card-hover);
+            background: var(--card2);
+
             transform: translateY(-3px);
+
+            border-color: rgba(139, 92, 246, 0.3);
         }
 
         .skill-icon {
-            width: 42px;
-            height: 42px;
+            width: 44px;
+            height: 44px;
 
             display: grid;
             place-items: center;
 
             background: rgba(139, 92, 246, 0.1);
 
-            border-radius: 10px;
-
             color: var(--primary-light);
+
+            border-radius: 10px;
 
             margin-bottom: 18px;
         }
 
         .skill-card h3 {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .skill-card p {
             color: var(--muted);
-            font-size: 14px;
+
+            font-size: 13px;
+
+            margin-bottom: 17px;
         }
 
         .skill-tags {
             display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
 
-            margin-top: 17px;
+            flex-wrap: wrap;
+
+            gap: 7px;
         }
 
         .skill-tag {
             padding: 5px 9px;
 
             background: rgba(148, 163, 184, 0.07);
+
             border: 1px solid var(--border);
+
             border-radius: 6px;
 
             color: #cbd5e1;
 
-            font-size: 12px;
+            font-size: 11px;
+
             font-family: "JetBrains Mono", monospace;
         }
 
-        /* =========================
+        /* =========================================
            PROJECTS
-        ========================= */
+        ========================================= */
 
         .projects-grid {
             display: grid;
+
             grid-template-columns: repeat(2, 1fr);
+
             gap: 20px;
         }
 
         .project-card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 15px;
-
             padding: 28px;
 
-            display: flex;
-            flex-direction: column;
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 15px;
 
             transition: 0.25s;
         }
 
         .project-card:hover {
             transform: translateY(-5px);
+
             border-color: rgba(139, 92, 246, 0.4);
         }
 
-        .project-top {
+        .project-header {
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
 
             margin-bottom: 22px;
         }
 
         .project-number {
-            font-family: "JetBrains Mono", monospace;
             color: var(--primary-light);
-            font-size: 13px;
+
+            font-family: "JetBrains Mono", monospace;
+
+            font-size: 12px;
         }
 
-        .project-link {
-            width: 35px;
-            height: 35px;
+        .github-project {
+            width: 36px;
+            height: 36px;
 
             display: grid;
             place-items: center;
 
             border: 1px solid var(--border);
+
             border-radius: 8px;
 
             color: var(--muted);
@@ -506,18 +694,21 @@
             transition: 0.2s;
         }
 
-        .project-link:hover {
+        .github-project:hover {
             color: white;
+
             border-color: var(--primary);
         }
 
         .project-card h3 {
             font-size: 21px;
-            margin-bottom: 12px;
+
+            margin-bottom: 10px;
         }
 
         .project-card p {
             color: var(--muted);
+
             font-size: 14px;
 
             margin-bottom: 20px;
@@ -525,34 +716,113 @@
 
         .project-tech {
             display: flex;
-            flex-wrap: wrap;
-            gap: 7px;
 
-            margin-top: auto;
+            flex-wrap: wrap;
+
+            gap: 7px;
         }
 
         .project-tech span {
-            font-size: 11px;
             padding: 5px 8px;
+
+            background: rgba(139, 92, 246, 0.08);
 
             color: #c4b5fd;
 
-            background: rgba(139, 92, 246, 0.08);
             border-radius: 5px;
+
+            font-size: 11px;
         }
 
-        /* =========================
+        /* =========================================
+           GITHUB
+        ========================================= */
+
+        .github-section {
+            background: var(--bg2);
+        }
+
+        .github-box {
+            padding: 40px;
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 16px;
+
+            text-align: center;
+        }
+
+        .github-icon {
+            font-size: 50px;
+
+            margin-bottom: 18px;
+        }
+
+        .github-box h3 {
+            font-size: 25px;
+
+            margin-bottom: 10px;
+        }
+
+        .github-box p {
+            color: var(--muted);
+
+            max-width: 600px;
+
+            margin: 0 auto 25px;
+        }
+
+        .github-stats {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 15px;
+
+            margin-top: 35px;
+        }
+
+        .github-stat {
+            padding: 20px;
+
+            background: rgba(148, 163, 184, 0.04);
+
+            border: 1px solid var(--border);
+
+            border-radius: 10px;
+        }
+
+        .github-stat strong {
+            display: block;
+
+            font-size: 24px;
+
+            margin-bottom: 3px;
+        }
+
+        .github-stat span {
+            color: var(--muted);
+
+            font-size: 12px;
+        }
+
+        /* =========================================
            EDUCATION
-        ========================= */
+        ========================================= */
 
         .timeline {
             border-left: 1px solid var(--border);
+
             margin-left: 10px;
+
             padding-left: 30px;
         }
 
         .timeline-item {
             position: relative;
+
             margin-bottom: 35px;
         }
 
@@ -564,20 +834,22 @@
             width: 10px;
             height: 10px;
 
-            border-radius: 50%;
+            left: -36px;
+            top: 8px;
 
             background: var(--primary);
 
-            left: -36px;
-            top: 8px;
+            border-radius: 50%;
         }
 
         .timeline-date {
-            font-family: "JetBrains Mono", monospace;
             color: var(--primary-light);
-            font-size: 12px;
 
-            margin-bottom: 7px;
+            font-family: "JetBrains Mono", monospace;
+
+            font-size: 11px;
+
+            margin-bottom: 6px;
         }
 
         .timeline-item h3 {
@@ -586,50 +858,66 @@
 
         .timeline-item p {
             color: var(--muted);
+
+            font-size: 14px;
         }
 
-        /* =========================
+        /* =========================================
            CONTACT
-        ========================= */
+        ========================================= */
 
-        .contact-wrapper {
+        .contact-grid {
             display: grid;
+
             grid-template-columns: 0.9fr 1.1fr;
-            gap: 40px;
+
+            gap: 45px;
         }
 
-        .contact-info p {
+        .contact-info > p {
             color: var(--muted);
+
             margin-bottom: 25px;
         }
 
         .contact-item {
             display: flex;
+
             align-items: center;
+
             gap: 13px;
 
             margin-bottom: 15px;
 
             color: #cbd5e1;
+
             font-size: 14px;
         }
 
         .contact-item i {
-            width: 35px;
-            height: 35px;
+            width: 36px;
+            height: 36px;
 
             display: grid;
             place-items: center;
 
             background: rgba(139, 92, 246, 0.1);
+
             color: var(--primary-light);
 
             border-radius: 8px;
+
+            flex-shrink: 0;
+        }
+
+        .contact-item a:hover {
+            color: var(--primary-light);
         }
 
         .contact-form {
             display: grid;
-            gap: 14px;
+
+            gap: 13px;
         }
 
         .contact-form input,
@@ -641,13 +929,14 @@
             background: var(--card);
 
             border: 1px solid var(--border);
+
             border-radius: 9px;
+
+            outline: none;
 
             color: white;
 
-            font-family: inherit;
-
-            outline: none;
+            font-size: 14px;
         }
 
         .contact-form input:focus,
@@ -657,12 +946,13 @@
 
         .contact-form textarea {
             min-height: 150px;
+
             resize: vertical;
         }
 
-        /* =========================
+        /* =========================================
            FOOTER
-        ========================= */
+        ========================================= */
 
         footer {
             padding: 35px 0;
@@ -670,18 +960,23 @@
             border-top: 1px solid var(--border);
 
             color: var(--muted);
-            font-size: 13px;
+
+            font-size: 12px;
         }
 
         .footer-content {
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
+
             gap: 20px;
         }
 
         .footer-social {
             display: flex;
+
             gap: 15px;
         }
 
@@ -689,42 +984,138 @@
             color: white;
         }
 
-        /* =========================
-           MOBILE
-        ========================= */
+        /* =========================================
+           SCROLL TOP
+        ========================================= */
 
-        @media (max-width: 800px) {
+        #scrollTop {
+            position: fixed;
+
+            right: 22px;
+            bottom: 22px;
+
+            width: 42px;
+            height: 42px;
+
+            display: grid;
+            place-items: center;
+
+            border: 1px solid var(--border);
+
+            border-radius: 10px;
+
+            background: var(--card);
+
+            color: white;
+
+            cursor: pointer;
+
+            opacity: 0;
+
+            pointer-events: none;
+
+            transition: 0.3s;
+
+            z-index: 900;
+        }
+
+        #scrollTop.show {
+            opacity: 1;
+
+            pointer-events: auto;
+        }
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media (max-width: 850px) {
 
             .nav-links {
                 display: none;
             }
 
-            .nav-social {
+            .nav-right .nav-social {
                 display: none;
+            }
+
+            .menu-btn {
+                display: grid;
+                place-items: center;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+
+                text-align: center;
+            }
+
+            .hero-content {
+                order: 2;
+            }
+
+            .hero-photo {
+                order: 1;
+            }
+
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .photo-wrapper {
+                width: 250px;
+                height: 250px;
             }
 
             .about-grid,
             .skills-grid,
             .projects-grid,
-            .contact-wrapper {
+            .contact-grid {
                 grid-template-columns: 1fr;
             }
 
-            .hero h1 {
-                letter-spacing: -2px;
+            .github-stats {
+                grid-template-columns: 1fr;
             }
 
             section {
                 padding: 75px 0;
             }
+        }
+
+        @media (max-width: 500px) {
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .section-title {
+                font-size: 29px;
+            }
+
+            .photo-wrapper {
+                width: 210px;
+                height: 210px;
+            }
+
+            .github-box {
+                padding: 25px 18px;
+            }
 
             .footer-content {
                 flex-direction: column;
+
                 text-align: center;
             }
         }
 
         @media (prefers-reduced-motion: reduce) {
+
             *,
             *::before,
             *::after {
@@ -732,16 +1123,20 @@
                 transition: none !important;
             }
         }
+
     </style>
 </head>
 
+
 <body>
 
-<!-- =========================
-     NAVIGATION
-========================= -->
+
+<!-- =========================================
+     NAVBAR
+========================================= -->
 
 <nav>
+
     <div class="container nav-container">
 
         <a href="#home" class="logo">
@@ -749,16 +1144,38 @@
         </a>
 
         <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#contact">Contact</a></li>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#education">Education</a>
+            </li>
+
+            <li>
+                <a href="#github">GitHub</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
         </ul>
 
-        <div class="nav-social">
+
+        <div class="nav-right">
 
             <a
+                class="nav-social"
                 href="https://github.com/ashok21045"
                 target="_blank"
                 aria-label="GitHub"
@@ -767,70 +1184,138 @@
             </a>
 
             <a
-                href="https://linkedin.com/in/ashok-poudel-a97460359/"
+                class="nav-social"
+                href="https://www.linkedin.com/in/ashok-poudel-a97460359/"
                 target="_blank"
                 aria-label="LinkedIn"
             >
                 <i class="fa-brands fa-linkedin-in"></i>
             </a>
 
+            <button
+                class="menu-btn"
+                id="menuBtn"
+                aria-label="Open menu"
+            >
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
         </div>
 
     </div>
+
 </nav>
 
 
-<!-- =========================
+<!-- =========================================
+     MOBILE MENU
+========================================= -->
+
+<div class="mobile-menu" id="mobileMenu">
+
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#github">GitHub</a>
+    <a href="#contact">Contact</a>
+
+</div>
+
+
+<!-- =========================================
      HERO
-========================= -->
+========================================= -->
 
 <section class="hero" id="home">
 
-    <div class="container">
+    <div class="container hero-grid">
+
 
         <div class="hero-content">
 
             <div class="hero-tag">
-                <span class="status-dot"></span>
-                Available for opportunities
+
+                <span class="dot"></span>
+
+                BCA Student · Developer · UI/UX Designer
+
             </div>
+
 
             <h1>
-                Hi, I'm <span>Ashok Poudel</span>.
+
+                Hi, I'm
+                <span class="gradient-text">
+                    Ashok Poudel
+                </span>
+
             </h1>
 
+
             <div class="hero-role">
-                BCA Student · Developer · UI/UX Designer
+
+                Developer & UI/UX Designer
+
             </div>
 
+
             <p class="hero-description">
-                I’m a BCA student and developer from Nepal who enjoys
-                building web applications, exploring backend development,
-                and designing clean and user-friendly digital experiences.
-                I’m also exploring Python and Generative AI to expand
-                my development skills.
+
+                I'm a BCA student passionate about software development,
+                web technologies and UI/UX design. I enjoy turning ideas
+                into functional applications and continuously learning
+                new technologies.
+
             </p>
+
 
             <div class="hero-buttons">
 
-                <a href="#projects" class="btn btn-primary">
+                <a
+                    href="#projects"
+                    class="btn btn-primary"
+                >
                     <i class="fa-solid fa-code"></i>
-                    View My Projects
+                    View Projects
                 </a>
+
 
                 <a
-                    href="https://github.com/ashok21045"
-                    target="_blank"
+                    href="Resume.pdf"
                     class="btn btn-outline"
+                    target="_blank"
                 >
-                    <i class="fa-brands fa-github"></i>
-                    GitHub
+                    <i class="fa-regular fa-file-pdf"></i>
+                    View Resume
                 </a>
 
-                <a href="#contact" class="btn btn-outline">
-                    <i class="fa-regular fa-envelope"></i>
-                    Contact Me
+
+                <a
+                    href="Resume.pdf"
+                    class="btn btn-outline"
+                    download="Ashok_Poudel_Resume.pdf"
+                >
+                    <i class="fa-solid fa-download"></i>
+                    Download CV
                 </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- YOUR ACTUAL PHOTO -->
+
+        <div class="hero-photo">
+
+            <div class="photo-wrapper">
+
+                <img
+                    src="ashok.jpg"
+                    alt="Ashok Poudel"
+                    class="profile-image"
+                >
 
             </div>
 
@@ -841,52 +1326,55 @@
 </section>
 
 
-<!-- =========================
+<!-- =========================================
      ABOUT
-========================= -->
+========================================= -->
 
 <section id="about">
 
     <div class="container">
 
-        <div class="section-label">01 / ABOUT</div>
+        <div class="section-label">
+            01 / ABOUT
+        </div>
 
         <h2 class="section-title">
-            A little about me
+            About Me
         </h2>
 
         <p class="section-description">
-            Developer focused on learning, building and improving one
-            project at a time.
+            A little introduction about who I am and what I enjoy building.
         </p>
 
+
         <div class="about-grid">
+
 
             <div class="about-text">
 
                 <p>
-                    I’m Ashok Poudel, a BCA student passionate about
-                    software development and technology.
+                    I'm <strong>Ashok Poudel</strong>, a BCA student
+                    from Nepal with an interest in software development
+                    and UI/UX design.
                 </p>
 
                 <p>
-                    I work with languages and technologies such as
-                    Python, PHP, JavaScript, Java, C, HTML, CSS and
-                    Bootstrap. I enjoy turning ideas into functional
-                    web applications and continuously improving my
-                    development skills.
+                    I work with programming languages including
+                    C, Java, Python, PHP and JavaScript, and I use
+                    technologies such as HTML, CSS and Bootstrap to
+                    build web applications.
                 </p>
 
                 <p>
-                    Alongside development, I have an interest in UI/UX
-                    design and use tools such as Figma, Canva, Adobe XD
-                    and Photoshop to create clean and user-friendly
-                    interfaces.
+                    I also enjoy designing digital interfaces and
+                    exploring UI/UX using Figma, Canva, Adobe XD
+                    and Adobe Photoshop.
                 </p>
 
                 <p>
-                    Currently, I’m especially interested in backend
-                    development, Python and Generative AI applications.
+                    My goal is to keep learning, build useful projects
+                    and grow as a developer while exploring modern
+                    technologies.
                 </p>
 
             </div>
@@ -894,31 +1382,60 @@
 
             <div class="about-card">
 
-                <h3>Quick Info</h3>
+                <h3>Quick Information</h3>
+
 
                 <div class="info-row">
+
                     <span>Name</span>
+
                     <span>Ashok Poudel</span>
+
                 </div>
 
+
                 <div class="info-row">
+
                     <span>Education</span>
+
                     <span>BCA</span>
+
                 </div>
 
-                <div class="info-row">
-                    <span>Location</span>
-                    <span>Nepal</span>
-                </div>
 
                 <div class="info-row">
-                    <span>Focus</span>
-                    <span>Development & AI</span>
+
+                    <span>Role</span>
+
+                    <span>Developer</span>
+
                 </div>
 
+
                 <div class="info-row">
+
                     <span>Design</span>
+
                     <span>UI/UX</span>
+
+                </div>
+
+
+                <div class="info-row">
+
+                    <span>Location</span>
+
+                    <span>Nepal</span>
+
+                </div>
+
+
+                <div class="info-row">
+
+                    <span>GitHub</span>
+
+                    <span>ashok21045</span>
+
                 </div>
 
             </div>
@@ -930,27 +1447,29 @@
 </section>
 
 
-<!-- =========================
+<!-- =========================================
      SKILLS
-========================= -->
+========================================= -->
 
 <section id="skills">
 
     <div class="container">
 
-        <div class="section-label">02 / SKILLS</div>
+        <div class="section-label">
+            02 / SKILLS
+        </div>
 
         <h2 class="section-title">
-            Technologies & tools
+            Tech Stack
         </h2>
 
         <p class="section-description">
-            Technologies I use, have worked with, or am currently
-            learning.
+            Technologies and design tools represented in my GitHub profile.
         </p>
 
 
         <div class="skills-grid">
+
 
             <!-- Programming -->
 
@@ -960,19 +1479,28 @@
                     <i class="fa-solid fa-code"></i>
                 </div>
 
-                <h3>Programming</h3>
+                <h3>
+                    Programming
+                </h3>
 
                 <p>
                     Programming languages I have learned and used
-                    across academic and personal projects.
+                    in different academic and personal projects.
                 </p>
 
+
                 <div class="skill-tags">
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">PHP</span>
-                    <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">Java</span>
+
                     <span class="skill-tag">C</span>
+
+                    <span class="skill-tag">Java</span>
+
+                    <span class="skill-tag">Python</span>
+
+                    <span class="skill-tag">PHP</span>
+
+                    <span class="skill-tag">JavaScript</span>
+
                 </div>
 
             </div>
@@ -986,45 +1514,28 @@
                     <i class="fa-solid fa-globe"></i>
                 </div>
 
-                <h3>Web Development</h3>
+                <h3>
+                    Web Development
+                </h3>
 
                 <p>
-                    Building responsive and interactive web
-                    applications.
+                    Technologies I use for creating responsive and
+                    interactive web applications.
                 </p>
 
+
                 <div class="skill-tags">
+
                     <span class="skill-tag">HTML5</span>
+
                     <span class="skill-tag">CSS3</span>
+
                     <span class="skill-tag">JavaScript</span>
+
                     <span class="skill-tag">PHP</span>
+
                     <span class="skill-tag">Bootstrap</span>
-                </div>
 
-            </div>
-
-
-            <!-- Database -->
-
-            <div class="skill-card">
-
-                <div class="skill-icon">
-                    <i class="fa-solid fa-database"></i>
-                </div>
-
-                <h3>Database & Tools</h3>
-
-                <p>
-                    Working with databases and development tools for
-                    building and managing applications.
-                </p>
-
-                <div class="skill-tags">
-                    <span class="skill-tag">MySQL</span>
-                    <span class="skill-tag">SQLite</span>
-                    <span class="skill-tag">Git</span>
-                    <span class="skill-tag">GitHub</span>
-                    <span class="skill-tag">VS Code</span>
                 </div>
 
             </div>
@@ -1038,18 +1549,59 @@
                     <i class="fa-solid fa-pen-ruler"></i>
                 </div>
 
-                <h3>UI/UX & Design</h3>
+                <h3>
+                    Design Tools
+                </h3>
 
                 <p>
-                    Designing interfaces and visual assets with a
-                    focus on usability and clean presentation.
+                    Tools I use for interface design, graphics and
+                    visual content.
                 </p>
 
+
                 <div class="skill-tags">
+
                     <span class="skill-tag">Figma</span>
+
                     <span class="skill-tag">Canva</span>
+
                     <span class="skill-tag">Adobe XD</span>
+
                     <span class="skill-tag">Photoshop</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Development -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    <i class="fa-solid fa-laptop-code"></i>
+                </div>
+
+                <h3>
+                    Development Workflow
+                </h3>
+
+                <p>
+                    Tools and technologies I use while developing
+                    and managing projects.
+                </p>
+
+
+                <div class="skill-tags">
+
+                    <span class="skill-tag">Git</span>
+
+                    <span class="skill-tag">GitHub</span>
+
+                    <span class="skill-tag">VS Code</span>
+
+                    <span class="skill-tag">MySQL</span>
+
                 </div>
 
             </div>
@@ -1061,23 +1613,24 @@
 </section>
 
 
-<!-- =========================
+<!-- =========================================
      PROJECTS
-========================= -->
+========================================= -->
 
 <section id="projects">
 
     <div class="container">
 
-        <div class="section-label">03 / PROJECTS</div>
+        <div class="section-label">
+            03 / PROJECTS
+        </div>
 
         <h2 class="section-title">
-            Things I've built
+            Featured Projects
         </h2>
 
         <p class="section-description">
-            A selection of academic and personal projects where I
-            applied what I learned to real applications.
+            Projects currently featured on my GitHub profile.
         </p>
 
 
@@ -1088,39 +1641,51 @@
 
             <article class="project-card">
 
-                <div class="project-top">
+                <div class="project-header">
 
                     <span class="project-number">
                         PROJECT_01
                     </span>
 
+
                     <a
                         href="https://github.com/ashok21045/BrainSpark"
                         target="_blank"
-                        class="project-link"
-                        aria-label="BrainSpark GitHub"
+                        class="github-project"
+                        aria-label="Open BrainSpark GitHub repository"
                     >
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        <i class="fa-brands fa-github"></i>
                     </a>
 
                 </div>
 
-                <h3>BrainSpark</h3>
+
+                <h3>
+                    BrainSpark
+                </h3>
+
 
                 <p>
-                    A gamified learning platform developed as a BCA
-                    project. It provides brain-training and learning
-                    games while tracking user scores and gameplay
-                    information.
+                    An interactive web-based learning platform designed
+                    to enhance user engagement and learning through
+                    interactive games and activities.
                 </p>
 
+
                 <div class="project-tech">
-                    <span>PHP</span>
-                    <span>MySQL</span>
-                    <span>JavaScript</span>
+
                     <span>HTML</span>
+
                     <span>CSS</span>
+
+                    <span>JavaScript</span>
+
+                    <span>PHP</span>
+
+                    <span>MySQL</span>
+
                     <span>Bootstrap</span>
+
                 </div>
 
             </article>
@@ -1130,78 +1695,51 @@
 
             <article class="project-card">
 
-                <div class="project-top">
+                <div class="project-header">
 
                     <span class="project-number">
                         PROJECT_02
                     </span>
 
+
                     <a
                         href="https://github.com/ashok21045/shopping_site"
                         target="_blank"
-                        class="project-link"
-                        aria-label="E-Commerce GitHub"
-                    >
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </a>
-
-                </div>
-
-                <h3>E-Commerce Website</h3>
-
-                <p>
-                    A PHP-based e-commerce web application with
-                    product categories, user authentication, session
-                    based shopping cart functionality and database
-                    integration.
-                </p>
-
-                <div class="project-tech">
-                    <span>PHP</span>
-                    <span>MySQL</span>
-                    <span>JavaScript</span>
-                    <span>Bootstrap</span>
-                    <span>HTML</span>
-                    <span>CSS</span>
-                </div>
-
-            </article>
-
-            <!-- RAG -->
-
-            <article class="project-card">
-
-                <div class="project-top">
-
-                    <span class="project-number">
-                        PROJECT_04
-                    </span>
-
-                    <a
-                        href="https://github.com/ashok21045/multi_document_rag_chatbot"
-                        target="_blank"
-                        class="project-link"
-                        aria-label="AI projects"
+                        class="github-project"
+                        aria-label="Open E-Commerce GitHub repository"
                     >
                         <i class="fa-brands fa-github"></i>
                     </a>
 
                 </div>
 
-                <h3>Multi-Document RAG Chatbot</h3>
+
+                <h3>
+                    E-Commerce Website
+                </h3>
+
 
                 <p>
-                    A learning project exploring document-based
-                    question answering using Python, LLMs, document
-                    processing and vector search.
+                    A full-stack online shopping platform featuring
+                    product browsing, shopping cart management,
+                    user authentication and order processing.
                 </p>
 
+
                 <div class="project-tech">
-                    <span>Python</span>
-                    <span>Streamlit</span>
-                    <span>Gemini</span>
-                    <span>RAG</span>
-                    <span>ChromaDB</span>
+
+                    <span>PHP</span>
+
+                    <span>MySQL</span>
+
+                    <span>HTML</span>
+
+                    <span>CSS</span>
+
+                    <span>JavaScript</span>
+
+                    <span>Bootstrap</span>
+
                 </div>
 
             </article>
@@ -1213,31 +1751,34 @@
 </section>
 
 
-<!-- =========================
+<!-- =========================================
      EDUCATION
-========================= -->
+========================================= -->
 
 <section id="education">
 
     <div class="container">
 
-        <div class="section-label">04 / EDUCATION</div>
+        <div class="section-label">
+            04 / EDUCATION
+        </div>
 
         <h2 class="section-title">
             Education
         </h2>
 
         <p class="section-description">
-            My academic background and current learning journey.
+            My academic journey in computer applications.
         </p>
 
 
         <div class="timeline">
 
+
             <div class="timeline-item">
 
                 <div class="timeline-date">
-                    CURRENT
+                    2080 — PRESENT
                 </div>
 
                 <h3>
@@ -1262,14 +1803,13 @@
                 </div>
 
                 <h3>
-                    Software Development & AI
+                    Development & Design
                 </h3>
 
                 <p>
-                    Currently learning Python, backend development,
-                    Generative AI, RAG systems and modern software
-                    development practices through projects and
-                    self-learning.
+                    Continuously learning programming, web development,
+                    UI/UX design and modern software technologies
+                    through projects and self-learning.
                 </p>
 
             </div>
@@ -1281,35 +1821,129 @@
 </section>
 
 
-<!-- =========================
+<!-- =========================================
+     GITHUB
+========================================= -->
+
+<section id="github" class="github-section">
+
+    <div class="container">
+
+        <div class="section-label">
+            05 / GITHUB
+        </div>
+
+        <h2 class="section-title">
+            Find me on GitHub
+        </h2>
+
+        <p class="section-description">
+            Explore my repositories, projects and development activity.
+        </p>
+
+
+        <div class="github-box">
+
+            <div class="github-icon">
+                <i class="fa-brands fa-github"></i>
+            </div>
+
+
+            <h3>
+                @ashok21045
+            </h3>
+
+
+            <p>
+                Check out my source code, projects and experiments
+                on GitHub.
+            </p>
+
+
+            <a
+                href="https://github.com/ashok21045"
+                target="_blank"
+                class="btn btn-primary"
+            >
+                <i class="fa-brands fa-github"></i>
+                Visit GitHub
+            </a>
+
+
+            <div class="github-stats">
+
+                <div class="github-stat">
+
+                    <strong>02+</strong>
+
+                    <span>
+                        Featured Projects
+                    </span>
+
+                </div>
+
+
+                <div class="github-stat">
+
+                    <strong>08+</strong>
+
+                    <span>
+                        Technologies
+                    </span>
+
+                </div>
+
+
+                <div class="github-stat">
+
+                    <strong>04</strong>
+
+                    <span>
+                        Design Tools
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
      CONTACT
-========================= -->
+========================================= -->
 
 <section id="contact">
 
     <div class="container">
 
-        <div class="section-label">05 / CONTACT</div>
+        <div class="section-label">
+            06 / CONTACT
+        </div>
 
         <h2 class="section-title">
-            Let's connect
+            Let's Connect
         </h2>
 
         <p class="section-description">
-            Interested in working together, discussing a project,
-            or simply connecting? Feel free to reach out.
+            Have a project idea, collaboration opportunity or just
+            want to connect? Feel free to reach out.
         </p>
 
 
-        <div class="contact-wrapper">
+        <div class="contact-grid">
 
 
             <div class="contact-info">
 
                 <p>
-                    I'm open to internships, learning opportunities,
-                    collaborations and interesting development
-                    projects.
+                    You can find me through the platforms below.
+                    I'm always interested in learning, building
+                    and connecting with other developers.
                 </p>
 
 
@@ -1343,7 +1977,7 @@
                     <i class="fa-brands fa-linkedin"></i>
 
                     <a
-                        href="https://linkedin.com/in/ashok-poudel-a97460359/"
+                        href="https://www.linkedin.com/in/ashok-poudel-a97460359/"
                         target="_blank"
                     >
                         LinkedIn
@@ -1368,6 +2002,8 @@
             </div>
 
 
+            <!-- CONTACT FORM -->
+
             <form
                 class="contact-form"
                 action="mailto:poudelashok222@gmail.com"
@@ -1382,6 +2018,7 @@
                     required
                 >
 
+
                 <input
                     type="email"
                     name="email"
@@ -1389,18 +2026,23 @@
                     required
                 >
 
+
                 <textarea
                     name="message"
-                    placeholder="Your message"
+                    placeholder="Write your message..."
                     required
                 ></textarea>
+
 
                 <button
                     type="submit"
                     class="btn btn-primary"
                 >
+
                     <i class="fa-regular fa-paper-plane"></i>
+
                     Send Message
+
                 </button>
 
             </form>
@@ -1412,17 +2054,18 @@
 </section>
 
 
-<!-- =========================
+<!-- =========================================
      FOOTER
-========================= -->
+========================================= -->
 
 <footer>
 
     <div class="container footer-content">
 
         <div>
-            © 2026 Ashok Poudel. Built with HTML, CSS & JavaScript.
+            © 2026 Ashok Poudel. All rights reserved.
         </div>
+
 
         <div class="footer-social">
 
@@ -1434,13 +2077,24 @@
                 <i class="fa-brands fa-github"></i>
             </a>
 
+
             <a
-                href="https://linkedin.com/in/ashok-poudel-a97460359/"
+                href="https://www.linkedin.com/in/ashok-poudel-a97460359/"
                 target="_blank"
                 aria-label="LinkedIn"
             >
                 <i class="fa-brands fa-linkedin"></i>
             </a>
+
+
+            <a
+                href="https://www.instagram.com/a.ok2022/"
+                target="_blank"
+                aria-label="Instagram"
+            >
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
 
             <a
                 href="mailto:poudelashok222@gmail.com"
@@ -1456,6 +2110,101 @@
 </footer>
 
 
+<!-- SCROLL TOP -->
+
+<button id="scrollTop" aria-label="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
+<script>
+
+    /* =========================
+       MOBILE MENU
+    ========================= */
+
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuBtn.addEventListener("click", () => {
+
+        mobileMenu.classList.toggle("active");
+
+        document.body.classList.toggle("no-scroll");
+
+        const icon = menuBtn.querySelector("i");
+
+        if (mobileMenu.classList.contains("active")) {
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-xmark");
+        } else {
+            icon.classList.remove("fa-xmark");
+            icon.classList.add("fa-bars");
+        }
+
+    });
+
+
+    /* =========================
+       CLOSE MOBILE MENU
+    ========================= */
+
+    document.querySelectorAll(".mobile-menu a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            mobileMenu.classList.remove("active");
+
+            document.body.classList.remove("no-scroll");
+
+            const icon = menuBtn.querySelector("i");
+
+            icon.classList.remove("fa-xmark");
+
+            icon.classList.add("fa-bars");
+
+        });
+
+    });
+
+
+    /* =========================
+       SCROLL TOP
+    ========================= */
+
+    const scrollTop = document.getElementById("scrollTop");
+
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 500) {
+
+            scrollTop.classList.add("show");
+
+        } else {
+
+            scrollTop.classList.remove("show");
+
+        }
+
+    });
+
+
+    scrollTop.addEventListener("click", () => {
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    });
+
+
+</script>
+
+
 </body>
 </html>
-
